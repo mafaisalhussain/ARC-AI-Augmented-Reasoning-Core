@@ -198,29 +198,29 @@ curl -X POST http://127.0.0.1:8000/api/nlp/analyze \
 
 ## Project Structure
 
+```
 ├── app/
 │   ├── config.py           # Central settings (reads .env)
 │   ├── scraper.py          # Multi-source scraper (browser UA, 2-hop crawl)
 │   ├── chunker.py          # Token-aware chunking (tiktoken)
-│   ├── vectorstore.py      # RAG layer (ChromaDB + MiniLM embeddings)
-│   ├── llm.py              # Model routing (Ollama client, streaming, multi-model)
-│   ├── nlp.py              # Intent detection + NLP pipelines (ARC entry point)
-│   ├── chat.py             # CLI REPL (user interaction)
-│   └── api.py              # FastAPI backend (workflow execution layer)
+│   ├── vectorstore.py      # ChromaDB wrapper (MiniLM embeddings)
+│   ├── llm.py              # Ollama client (streaming, multi-model)
+│   ├── nlp.py              # 9 NLP techniques (lazy-loaded models)
+│   ├── chat.py             # CLI REPL
+│   └── api.py              # FastAPI backend
 ├── scripts/
-│   ├── ingest.py           # Scrape → chunk → embed → store (feeds ARC knowledge base)
-│   └── serve.py            # Server launcher (ARC-powered API)
+│   ├── ingest.py           # Scrape → chunk → embed → store
+│   └── serve.py            # Server launcher
 ├── web/
 │   └── index.html          # Custom chat UI
 ├── data/
 │   ├── raw/                # Scraped JSONL (git-ignored)
-│   └── processed/          # ChromaDB (RAG storage, git-ignored)
+│   └── processed/          # ChromaDB (git-ignored)
 ├── .env.example
 ├── .gitignore
 ├── requirements.txt
 └── README.md
-
----
+```
 ## Configuration
 
 All settings via .env (copied from .env.example):
