@@ -5,7 +5,7 @@
 [![Python 3.11](https://img.shields.io/badge/python-3.11-blue.svg)](https://www.python.org/downloads/release/python-3119/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.115-009688.svg)](https://fastapi.tiangolo.com)
 [![Ollama](https://img.shields.io/badge/Ollama-local_LLM-black.svg)](https://ollama.com)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 
 ---
 
@@ -202,25 +202,23 @@ curl -X POST http://127.0.0.1:8000/api/nlp/analyze \
 │   ├── config.py           # Central settings (reads .env)
 │   ├── scraper.py          # Multi-source scraper (browser UA, 2-hop crawl)
 │   ├── chunker.py          # Token-aware chunking (tiktoken)
-│   ├── vectorstore.py      # ChromaDB wrapper (MiniLM embeddings)
-│   ├── llm.py              # Ollama client (streaming, multi-model)
-│   ├── nlp.py              # 9 NLP techniques (lazy-loaded models)
-│   ├── chat.py             # CLI REPL
-│   └── api.py              # FastAPI backend
+│   ├── vectorstore.py      # RAG layer (ChromaDB + MiniLM embeddings)
+│   ├── llm.py              # Model routing (Ollama client, streaming, multi-model)
+│   ├── nlp.py              # Intent detection + NLP pipelines (ARC entry point)
+│   ├── chat.py             # CLI REPL (user interaction)
+│   └── api.py              # FastAPI backend (workflow execution layer)
 ├── scripts/
-│   ├── ingest.py           # Scrape → chunk → embed → store
-│   └── serve.py            # Server launcher
+│   ├── ingest.py           # Scrape → chunk → embed → store (feeds ARC knowledge base)
+│   └── serve.py            # Server launcher (ARC-powered API)
 ├── web/
 │   └── index.html          # Custom chat UI
 ├── data/
 │   ├── raw/                # Scraped JSONL (git-ignored)
-│   └── processed/          # ChromaDB (git-ignored)
+│   └── processed/          # ChromaDB (RAG storage, git-ignored)
 ├── .env.example
 ├── .gitignore
 ├── requirements.txt
 └── README.md
-
----
 
 ## Configuration
 
@@ -262,10 +260,4 @@ All settings via .env (copied from .env.example):
 
 ---
 
-## License
 
-MIT
-
----
-
-*Built as a final project for DATA 622 — Machine Learning at Scale (UMBC).*
