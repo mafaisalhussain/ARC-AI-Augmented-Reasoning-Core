@@ -92,8 +92,8 @@ Each technique is accessible via the "Analyze (NLP)" button in the UI or the POS
 ### 1. Clone
 
 ```bash
-git clone https://github.com/mafaisalhussain/ARC-AI---Augmented-Reasoning-Core.git
-cd ARC-AI---Augmented-Reasoning-Core
+git clone https://github.com/mafaisalhussain/ARC-AI-Augmented-Reasoning-Core.git
+cd ARC-AI-Augmented-Reasoning-Core
 ```
 
 ### 2. Virtual environment
