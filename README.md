@@ -5,7 +5,7 @@
 [![Python 3.11](https://img.shields.io/badge/python-3.11-blue.svg)](https://www.python.org/downloads/release/python-3119/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.115-009688.svg)](https://fastapi.tiangolo.com)
 [![Ollama](https://img.shields.io/badge/Ollama-local_LLM-black.svg)](https://ollama.com)
-
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 ---
 
@@ -260,3 +260,12 @@ All settings via .env (copied from .env.example):
 
 **ARC AI is not a lawyer.** All answers are informational only, based on publicly available Maryland state and county sources. Consult a licensed attorney for advice specific to your situation.
 
+---
+
+## License
+
+MIT
+
+---
+
+*Built as a final project for DATA 622 — Machine Learning at Scale (UMBC).*
